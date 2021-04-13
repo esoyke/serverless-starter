@@ -1,11 +1,11 @@
 [build]
-  command = "ng build --prod && npm run scully"
+  command = "npm run prerender"
   functions = "./functions"
-  publish = "dist/static"
+  publish = "dist/angular-sanity/browser"
 [dev]
   command = "npm run start"
   functions = "./functions"
-  publish = "src"
+  publish = "src"  
 [[redirects]]
   from = "/*"
   to = "/index.html"
