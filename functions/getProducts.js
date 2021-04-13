@@ -16,8 +16,18 @@ exports.handler = async () => {
     // then it iterates over each product
     const allProducts = results.map((product) => {
       // & assigns its properties to output
+
+      // service stopped working after I added a product, it is throwing error here, presumably due to no slug being defined
+      let slug = product.slug.current;
+      let _id;
+      if(slug)
+        _id = product.slug;
+      else
+        _id = 'FOO';  
+        
       const output = {
-        id: product.slug.current,
+        //id: product.slug.current,
+        id: _id,
         name: product.title,
         url: `${process.env.URL}/.netlify/functions/getProducts`,
         price: product.defaultProductVariant.price,
