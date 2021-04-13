@@ -18,13 +18,13 @@ exports.handler = async () => {
       // & assigns its properties to output
 
       // service stopped working after I added a product, it is throwing error here, presumably due to no slug being defined
-      let slug = product.slug.current;
+      let slug = product.slug;
       let _id;
       if(slug)
-        _id = product.slug;
+        _id = product.slug.current;
       else
         _id = 'FOO';  
-        
+
       const output = {
         //id: product.slug.current,
         id: _id,
