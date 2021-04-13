@@ -47,3 +47,7 @@ Thumbs.db
 
 # Local Netlify folder
 .netlify
+
+# Local Sanity folder
+backend/node_modules
+backend/dist
