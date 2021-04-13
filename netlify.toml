@@ -1,7 +1,7 @@
 [build]
-  command = "npm run prerender"
+  command = "ng build —prod && nom run Scully“
   functions = "./functions"
-  publish = "dist/angular-sanity/browser"
+  publish = "dist/static”
 [dev]
   command = "npm run start"
   functions = "./functions"
