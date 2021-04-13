@@ -1,5 +1,5 @@
 [build]
-  command = "ng build —prod && nom run Scully“
+  command = "ng build -—prod && npm run Scully“
   functions = "./functions"
   publish = "dist/static”
 [dev]
