@@ -1,12 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Product } from '../models/Product';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  constructor() {}
+  products!: Observable<Product[]>;
 
-  ngOnInit(): void {}
+  constructor(private productsService: ProductsService) {}
+
+  ngOnInit(): void {
+    this.products = this.productsService.getProducts();
+  }
 }
